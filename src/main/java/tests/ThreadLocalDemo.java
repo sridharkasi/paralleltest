@@ -4,13 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 public class ThreadLocalDemo {
 	   @Test
 	    public void testMethod1() throws InterruptedException {
 	        invokeBrowser("http://newtours.demoaut.com/");
 	        
 	       // LocalDriverManager.getDriver().get("http://newtours.demoaut.com/");
-	     
+	        Baseclass.test = Baseclass.extn.createTest("newtours");
 			
 	        LocalDriverManager.getDriver().findElement(By.name("userName")).sendKeys("admin");
 	        LocalDriverManager.getDriver().findElement(By.name("password")).sendKeys("mercury");
@@ -29,10 +31,13 @@ public class ThreadLocalDemo {
 			LocalDriverManager.getDriver().findElement(By.name("creditnumber")).sendKeys("1234567891234567");
 			LocalDriverManager.getDriver().findElement(By.name("buyFlights")).click();	
 			Thread.sleep(100);
+			
+			Baseclass.test.log(Status.PASS, "Successfully launched Mercury Tours website");
+		
 			LocalDriverManager.getDriver().close();
 	    }
 	 
-	    @Test
+	   /* @Test
 	    public void testMethod2() throws InterruptedException {
 	    	 invokeBrowser("http://newtours.demoaut.com/");
 	     
@@ -80,9 +85,9 @@ public class ThreadLocalDemo {
 			LocalDriverManager.getDriver().findElement(By.name("buyFlights")).click();	
 			Thread.sleep(100);
 			LocalDriverManager.getDriver().close();
-	    }
+	    }*/
 	    
-	    @Test
+	   /* @Test
 	    public void testMethod4() throws InterruptedException {
 	    	 invokeBrowser("http://newtours.demoaut.com/");
 	     
@@ -381,8 +386,8 @@ public class ThreadLocalDemo {
 			Thread.sleep(100);
 			LocalDriverManager.getDriver().close();
 	    }
-	    
-	    @Test
+	    */
+	   /* @Test
 	    public void testMethod16() throws InterruptedException {
 	    	 invokeBrowser("http://newtours.demoaut.com/");
 	     
@@ -629,7 +634,7 @@ public class ThreadLocalDemo {
 			LocalDriverManager.getDriver().findElement(By.name("buyFlights")).click();	
 			Thread.sleep(100);
 			LocalDriverManager.getDriver().close();
-	    }
+	    }*/
 	    
 	   
 	    private void invokeBrowser(String url) {

@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+
 public class Threadlocal2 {
-	
-	 @Test
+@Test
 	    public void testMethod1() throws InterruptedException {
 	        invokeBrowser("http://newtours.demoaut.com/");
 	        
@@ -308,7 +308,7 @@ public class Threadlocal2 {
 			LocalDriverManager.getDriver().close();
 	    }
 	    
-	    @Test
+	  /*  @Test
 	    public void testMethod13() throws InterruptedException {
 	    	 invokeBrowser("http://newtours.demoaut.com/");
 	     
@@ -630,7 +630,7 @@ public class Threadlocal2 {
 			LocalDriverManager.getDriver().findElement(By.name("buyFlights")).click();	
 			Thread.sleep(100);
 			LocalDriverManager.getDriver().close();
-	    }
+	    }*/
 	    
 	   
 	    private void invokeBrowser(String url) {
@@ -639,5 +639,7 @@ public class Threadlocal2 {
 	        LocalDriverManager.getDriver().get(url);
 	 
 	    }
+	    
+	    
 
 }

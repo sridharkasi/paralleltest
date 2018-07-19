@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+<suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
   <listeners>
     <listener class-name="tests.WebDriverListener"/>
   </listeners>
-  <test name="TestFirefox(failed)" parallel="tests">
+  <test thread-count="4" name="TestFirefox1(failed)" parallel="tests">
     <parameter name="browserName" value="firefox"/>
     <classes>
       <class name="tests.Threadlocal2">
         <methods>
-          <include name="testMethod19"/>
+          <include name="testMethod4"/>
+          <include name="testMethod2"/>
           <include name="testMethod9"/>
-          <include name="testMethod13"/>
+          <include name="testMethod7"/>
+          <include name="testMethod11"/>
+          <include name="testMethod5"/>
+          <include name="testMethod8"/>
+          <include name="testMethod12"/>
+          <include name="testMethod3"/>
+          <include name="testMethod6"/>
+        </methods>
+      </class> <!-- tests.Threadlocal2 -->
+    </classes>
+  </test> <!-- TestFirefox1(failed) -->
+  <test thread-count="4" name="TestFirefox(failed)" parallel="tests">
+    <parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="tests.Threadlocal2">
+        <methods>
+          <include name="testMethod4"/>
+          <include name="testMethod2"/>
+          <include name="testMethod10"/>
+          <include name="testMethod9"/>
+          <include name="testMethod7"/>
+          <include name="testMethod5"/>
+          <include name="testMethod8"/>
+          <include name="testMethod12"/>
+          <include name="testMethod3"/>
+          <include name="testMethod6"/>
         </methods>
       </class> <!-- tests.Threadlocal2 -->
     </classes>
